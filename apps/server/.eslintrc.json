@@ -1,0 +1,184 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:security/recommended"
+  ],
+  "plugins": [
+    "security",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "no-console": "error",
+    "func-names": "off",
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "jest/expect-expect": "off",
+    "security/detect-object-injection": "off",
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "space-in-parens": [
+      "off",
+      "always"
+    ],
+    "keyword-spacing": [
+      "off",
+      {
+        "after": false,
+        "overrides": {
+          "return": {
+            "after": true
+          },
+          "throw": {
+            "after": true
+          },
+          "case": {
+            "after": true
+          }
+        }
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "objectsInObjects": true
+      }
+    ],
+    "computed-property-spacing": [
+      "error",
+      "never"
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "brace-style": [
+      "error"
+    ],
+    "nonblock-statement-body-position": [
+      "error",
+      "any"
+    ],
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "eol-last": [
+      "error",
+      "always"
+    ],
+    "array-bracket-newline": [
+      "error",
+      {
+        "multiline": true
+      }
+    ],
+    "dot-location": [
+      "error",
+      "property"
+    ],
+    "key-spacing": [
+      "error"
+    ],
+    "object-property-newline": "error",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "multiline": true,
+          "minProperties": 1
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "minProperties": 3
+        },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": {
+          "multiline": true,
+          "minProperties": 3
+        }
+      }
+    ],
+    "no-whitespace-before-property": "error",
+    "padded-blocks": [
+      "error",
+      "never"
+    ],
+    "switch-colon-spacing": [
+      "error",
+      {
+        "after": true,
+        "before": false
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 90
+      }
+    ],
+    "multiline-ternary": [
+      "error",
+      "always-multiline"
+    ],
+    "space-infix-ops": "error",
+    "implicit-arrow-linebreak": [
+      "off",
+      "beside"
+    ],
+    "operator-linebreak": [
+      "error",
+      "after"
+    ],
+    "function-paren-newline": [
+      "off",
+      {
+        "minItems": 3
+      }
+    ]
+  }
+}

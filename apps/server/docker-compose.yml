@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  database:
+    container_name: 'database'
+    image: mongo:6.0.4
+    ports:
+      - '27018:27017'
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - node-network
+
+  cache:
+    container_name: 'redis'
+    image: redis:7.0-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    volumes:
+      - cache:/data
+
+  app:
+    container_name: 'api'
+    build: .
+    image: node:alpine
+    command: yarn run dev
+    environment:
+      MONGODB_URL: mongodb://database:27017/api
+      REDIS_HOST: cache
+      REDIS_PORT: 6379
+      REDIS_PASS: eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    ports:
+      - '4000:3000'
+    depends_on:
+      - database
+      - cache
+    volumes:
+      - .:/usr/src/
+      - /usr/src/node_modules
+    networks:
+      - node-network
+
+volumes:
+  dbdata:
+    driver: local
+  cache:
+    driver: local
+
+networks:
+  node-network:
+    driver: bridge
