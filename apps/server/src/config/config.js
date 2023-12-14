@@ -5,7 +5,7 @@ const Joi = require('joi');
 const isProduction = process.env.NODE_ENV === 'production';
 
 dotenv.config({
-  path: path.join(__dirname, `../../.env${isProduction ? null : '.local'}`),
+  path: path.join(__dirname, `../../.env${isProduction ? '' : '.local'}`),
 });
 
 const envVarsSchema = Joi.object()
